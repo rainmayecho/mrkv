@@ -25,9 +25,9 @@ class MarkovChain(object):
             if w1 not in self.tree:
                 self.tree[w1] = {}
             if w2 not in self.tree[w1]:
-                self.tree[w1][w2] = E(w2)
+                self.tree[w1][w2] = E(w1, w2)
             else:
-                self.tree[w1][w2] += E(w2)
+                self.tree[w1][w2] += E(w1, w2)
         return True
 
     def ingest_from_file(self, filename, **kwargs):
